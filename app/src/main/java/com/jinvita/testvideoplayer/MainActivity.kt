@@ -19,7 +19,6 @@ class MainActivity : AppCompatActivity() {
         with(binding) {
             videoView.setMediaController(controller)
             controller.setAnchorView(videoView)
-            playVideo(1)
             button1.setOnClickListener { playVideo(1) }
             button2.setOnClickListener { playVideo(2) }
             button3.setOnClickListener { playVideo(3) }
@@ -47,5 +46,7 @@ class MainActivity : AppCompatActivity() {
         }
         setOnPreparedListener { controller.show(0) }
         start()
+
+        textTitle.text = "비디오$index 재생 중"
     }
 }
